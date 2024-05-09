@@ -1,0 +1,50 @@
+[
+   {
+       "id":1,
+      "img":"assets/img/L1.jpg",
+      "nombreProducto":"Light marc",
+      "precio":1800.00,
+      "descripcion":"Gafas inteligentes con marco delgado",
+      "calificacion":"8"
+   },
+   {
+       "id":2,
+      "img":"assets/img/L2.jpg",
+      "nombreProducto":"litter glass",
+      "precio":2000.00,
+      "descripcion":"Gafas inteligentes de marco angosto, graduados",
+      "calificacion":"9"
+   },
+   {
+        "id":3,
+      "img":"assets/img/L3.jpg",
+      "nombreProducto":"glass luminate",
+      "precio":5000.00,
+      "descripcion":"Gafas inteligentes, con tecnol\u00F3gia avanzada y hologramas",
+      "calificacion":"9.5"
+   },
+   {
+        "id":4,
+      "img":"assets/img/L4.jpg",
+      "nombreProducto":"gold glasses",
+      "precio":6000.00,
+      "descripcion":"Gafas inteligentes, elegantes, con tecnol\u00F3gia compatible,toma llamadas,genera hologramas en tiempo real",
+      "calificacion":"10"
+   },
+   {
+         "id":5,
+      "img":"assets/img/L5.jpg",
+      "nombreProducto":"golden hexagon",
+      "precio":6000.00,
+      "descripcion":"Gafas inteligentes, con inteligencia de luz solar, toma llamadas, graduado, generacion de hologramas,graduados,actividad bluerey",
+      "calificacion":"10"
+   },
+   {
+         "id":6,
+      "img":"assets/img/L6.jpg",
+      "nombreProducto":"glass bottle",
+      "precio":4000.00,
+      "descripcion":"Gafas inteligentes, con inteligencia de luz solar, toma llamadas, graduado,graduados,actividad bluerey",
+      "calificacion":"8"
+   }
+]

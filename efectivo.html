@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo de Pago</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .info {
+            margin-bottom: 20px;
+        }
+        .barcode {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #barcode {
+            max-width: 100%;
+        }
+        .print-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recibo de Pago</h1>
+        <div class="info">
+            <h2>Detalles del Pago</h2>
+            <p><strong>Concepto:</strong> Compra de productos</p>
+            <p><strong>Monto:</strong><span id="miSpan"></span></p>
+            <p><strong>Fecha:</strong> 9 de Mayo 2024</p>
+        </div>
+        <div class="barcode">
+            <h2>Código de Barras</h2>
+            <!-- Agregar el código de barras aquí -->
+            <svg id="barcode"></svg>
+        </div>
+        <!-- Enlace para imprimir el recibo -->
+        <a href="#" class="print-link" onclick="printReceipt()">Imprimir Recibo</a>
+    </div>
+
+    <!-- Librería JsBarcode para generar códigos de barras -->
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3/dist/JsBarcode.all.min.js"></script>
+    <script>
+        // Generar el código de barras utilizando JsBarcode
+        JsBarcode("#barcode", "123456789", {
+            format: "CODE128",
+            displayValue: false
+        });
+
+        // Función para imprimir el recibo
+        function printReceipt() {
+            // Llamar a la función window.print() para abrir el cuadro de diálogo de impresión de Windows
+            window.print();
+        }
+        var miSpan = document.getElementById("miSpan");
+
+        // Asignar texto al span utilizando textContent
+        var precio=localStorage.getItem("pago");
+        var jsonprecio = JSON.parse(precio);
+        
+        miSpan.textContent = jsonprecio.total;
+        console.log(jsonprecio);
+    </script>
+</body>
+</html>

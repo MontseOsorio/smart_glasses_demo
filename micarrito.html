@@ -1,0 +1,100 @@
+<?php
+session_start();
+
+// Inicializar el carrito si no está creado
+if (!isset($_SESSION['carrito'])) {
+    $_SESSION['carrito'] = [];
+}
+
+// Agregar producto al carrito
+if (isset($_POST['agregar'])) {
+    $producto = $_POST['producto'];
+    $cantidad = $_POST['cantidad'];
+
+    // Verificar si el producto ya está en el carrito
+    if (isset($_SESSION['carrito'][$producto])) {
+        $_SESSION['carrito'][$producto] += $cantidad;
+    } else {
+        $_SESSION['carrito'][$producto] = $cantidad;
+    }
+}
+
+// Eliminar producto del carrito
+if (isset($_GET['eliminar'])) {
+    $producto = $_GET['eliminar'];
+    unset($_SESSION['carrito'][$producto]);
+}
+
+// Vaciar carrito
+if (isset($_POST['vaciar'])) {
+    $_SESSION['carrito'] = [];
+}
+
+// Calcular total
+function calcularTotal() {
+    $total = 0;
+    foreach ($_SESSION['carrito'] as $producto => $cantidad) {
+        // Aquí podrías obtener el precio del producto desde una base de datos o de alguna otra manera
+        // En este ejemplo, el precio se fija manualmente
+        $precio = 10; // Precio ficticio para ejemplo
+        $total += $precio * $cantidad;
+    }
+    return $total;
+}
+
+// Generar factura con código QR
+if (isset($_POST['pagar'])) {
+    require_once 'vendor/autoload.php'; // Incluir la biblioteca de generación de código QR
+
+    $total = calcularTotal();
+    $factura = "Total a pagar: $total";
+    
+    // Generar el código QR
+    $qrCode = new BaconQrCode\Renderer\Image\Png();
+    $renderer = new BaconQrCode\Writer($qrCode);
+    $renderer->writeFile($factura, 'factura.png');
+}
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head
+    <link rel="stylesheet" href="js/carrito.js>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+</head>
+<body>
+    <h2>Carrito de Compras</h2>
+    <form method="post" action="index.php">
+        <select name="producto">
+            <option value="producto1">Producto 1</option>
+            <option value="producto2">Producto 2</option>
+            <!-- Agrega más opciones de productos aquí -->
+        </select>
+        <input type="number" name="cantidad" value="1" min="1">
+        <input type="submit" name="agregar" value="Agregar al carrito">
+    </form>
+
+    <h3>Carrito:</h3>
+    <?php if (!empty($_SESSION['carrito'])): ?>
+        <ul>
+            <?php foreach ($_SESSION['carrito'] as $producto => $cantidad): ?>
+                <li>
+                    <?php echo $producto; ?> - <?php echo $cantidad; ?> 
+                    <a href="index.php?eliminar=<?php echo $producto; ?>">Eliminar</a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+        <form method="post" action="index.php">
+            <input type="submit" name="vaciar" value="Vaciar carrito">
+        </form>
+        <h3>Total a pagar: <?php echo calcularTotal(); ?></h3>
+        <form method="post" action="index.php">
+            <input type="submit" name="pagar" value="Continuar con el Pago">
+        </form>
+    <?php else: ?>
+        <p>El carrito está vacío.</p>
+    <?php endif; ?>
+</body>
+</html>

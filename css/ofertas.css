@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #FFA500; /* Naranja claro */
+  padding: 10px 20px; /* Espacio entre la derecha e izquierda */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px; /* Puntas redondeadas */
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  text-align: center; /* Centrar horizontalmente el texto */
+}
+
+.navbar .logo img {
+  width: 40px; /* Ajustar tamaño de la imagen */
+  height: auto;
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.navbar .menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar .menu ul li {
+  display: inline-block;
+  margin-right: 20px; /* Espacio entre elementos del menú */
+}
+
+.navbar .menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+      color: coral;
+     
+}
+
+.product {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.product h2 {
+  margin-top: 10px;
+}
+
+.product p {
+  font-style: italic;
+  color: #888;
+}
+/* Definir la animación */
+@keyframes desplazamientoDerecha {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(20px); } /* Desplazamiento de 20px a la derecha */
+}
+
+/* Aplicar la animación al texto "Ofertas" */
+.navbar .logo h1 {
+        color: white;
+  animation: desplazamientoDerecha 1s ease infinite alternate; /* Duración, función de temporización, repetición */
+}
+.navbar .logo h1 {
+  margin: 0; /* Eliminar el margen por defecto del h1 */
+}
+  /* Estilos personalizados */
+    #imageCarousel {
+      max-width: 50%; /* Establece el ancho máximo del carrusel al 50% del contenedor */
+      margin: 0 auto; /* Centra horizontalmente el carrusel */
+    }
+
+    #imageCarousel .carousel-inner .carousel-item img {
+      max-width: 100%; /* Establece el ancho máximo de las imágenes al 100% del contenedor */
+      height: auto; /* Ajusta la altura automáticamente */
+      max-height: 500px; /* Establece la altura máxima de las imágenes */
+    }

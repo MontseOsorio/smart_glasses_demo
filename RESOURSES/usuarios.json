@@ -1,0 +1,15 @@
+[
+    {
+    "nombre":"Montse",
+    "correo":"montse.osorio.j@gmail.com",
+    "password":"12345",
+     "sesionActiva":false
+    },
+    {
+    "nombre":"Salome",
+    "correo":"salomeLuz@gmail.com",
+    "password":"salo1234",
+     "sesionActiva":false
+    }
+    
+]
