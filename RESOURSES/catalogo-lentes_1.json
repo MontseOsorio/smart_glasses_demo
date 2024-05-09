@@ -49,7 +49,7 @@
    },
     {
        "id":7,
-      "img":"assets/img/L1.jpg",
+      "img":"assets/img/Promo1.jpg",
       "nombreProducto":"TechShades",
       "precio":1440.00,
         "precioAntes":1800.00,
@@ -59,7 +59,7 @@
    },
    {
        "id":8,
-      "img":"assets/img/L2.jpg",
+      "img":"assets/img/Promo2.jpg",
       "nombreProducto":"OptiWise",
       "precio":2000.00,
         "precioAntes":1800.00,
@@ -69,7 +69,7 @@
    },
    {
         "id":9,
-      "img":"assets/img/L3.jpg",
+      "img":"assets/img/Promo3.jpg",
       "nombreProducto":"LensTech Pro",
       "precio":2500.00,
         "precioAntes":5000.00,
@@ -79,7 +79,7 @@
    },
    {
         "id":10,
-      "img":"assets/img/L4.jpg",
+      "img":"assets/img/gafasVerdes.jpg",
       "nombreProducto":"LensTech Pro",
       "precio":6000.00,
        "precioAntes":6000.00,
@@ -89,7 +89,7 @@
    },
    {
          "id":11,
-      "img":"assets/img/L5.jpg",
+      "img":"assets/img/lentes2.jpg",
       "nombreProducto":"InsightSpecs",
       "precio":4200.00,
           "precioAntes":6000.00,
@@ -99,7 +99,7 @@
    },
    {
          "id":12,
-      "img":"assets/img/L6.jpg",
+      "img":"assets/img/lentes3.jpg",
       "nombreProducto":"LuminaGaze",
       "precio":2400.00,
          "precioAntes":4000.00,
